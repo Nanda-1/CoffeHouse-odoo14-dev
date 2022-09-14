@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="coffehouse_menu_root" 
+              name="Coffe House" 
+              sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="coffehouse_kopi_menu_categ" 
+              name="Kopi" 
+              parent="coffehouse_menu_root" 
+              sequence="10"/>
+
+    <menuitem id="coffehouse_order_menu_categ" 
+              name="Order" 
+              parent="coffehouse_menu_root" 
+              sequence="10"/>
+
+    <menuitem id="coffehouse_pegawai_menu_categ" 
+              name="Pegawai" 
+              parent="coffehouse_menu_root" 
+              sequence="10"/>
+
+     <menuitem id="coffehouse_laporan_menu_categ" 
+              name="Laporan" 
+              parent="coffehouse_menu_root" 
+              sequence="10"/>
+     
+</odoo>

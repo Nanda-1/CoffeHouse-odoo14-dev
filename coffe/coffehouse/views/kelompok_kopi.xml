@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- coffehouse.kelompokkopi tree view -->
+    <record id="coffehouse_kelompokkopi_view_tree" model="ir.ui.view">
+        <field name="name">coffehouse.kelompokkopi.view.tree</field>
+        <field name="model">coffehouse.kelompokkopi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="id_kopi"/>
+                <field name="jml_item"/>
+                <field name="daftar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- coffehouse.kelompokkopi form view -->
+    <record id="coffehouse_kelompokkopi_view_form" model="ir.ui.view">
+        <field name="name">coffehouse.kelompokkopi.view.form</field>
+        <field name="model">coffehouse.kelompokkopi</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok kopi">
+                <sheet>
+                    <group name="kelompok" string="Jenis Kopi">
+                        <field name="name"/>
+                        <field name="id_kopi"/>
+                        <field name="jml_item"/>
+                    </group>
+                    <group name="rak" string="kopi">
+                        <field name="kopi_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- coffehouse.kelompokkopi action window -->
+    <record id="coffehouse_kelompokkopi_action" model="ir.actions.act_window">
+        <field name="name">Kelompok kopi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffehouse.kelompokkopi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="coffehouse_kelompokkopi_menu_action" 
+              name="Kelompok kopi" 
+              parent="coffehouse_kopi_menu_categ" 
+              action="coffehouse_kelompokkopi_action" 
+              sequence="10"/>
+
+</odoo>

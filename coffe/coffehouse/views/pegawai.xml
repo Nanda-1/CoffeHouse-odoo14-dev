@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data >
+
+    <record id="coffehouse_pegawai_view_tree" model="ir.ui.view">
+        <field name="name">coffehouse_pegawai.view.tree</field>
+        <field name="model">coffehouse.pegawai</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="id_pegawai" />
+                <field name="name" />
+                <field name="no_tlp" />
+                <field name="alamat" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="coffehouse_pegawai_view_form" model="ir.ui.view">
+        <field name="name">Data Pegawai</field>
+        <field name="model">coffehouse.pegawai</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="id_pegawai" />
+                        <field name="name" />
+                        <field name="no_tlp" />
+                        <field name="alamat" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="coffehouse_pegawai_action" model="ir.actions.act_window">
+        <field name="name">Pegawai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffehouse.pegawai</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="coffehouse_pegawai_menu_act"
+        name="Pegawai"
+        parent="coffehouse_pegawai_menu_categ"
+        action="coffehouse_pegawai_action"
+        sequence="10"/>
+
+    </data>
+</odoo>

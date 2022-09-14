@@ -26,5 +26,12 @@
             <field name="value">40</field>
           </record>
 -->
+<record id="coffehouse_order.seq_order" model="ir.sequence">
+                <field name="name">Order Coffe</field>
+                <field name="code">Order</field>
+                <field name="number_next_actual">001</field>
+                <field name="prefix">Coffe Order </field>
+                <field name="padding">001</field>
+        </record>
     </data>
 </odoo>

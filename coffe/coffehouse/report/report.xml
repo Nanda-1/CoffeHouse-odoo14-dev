@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+    
+    <record id="report_order_xlsx" model="ir.actions.report">
+        <field name="name">Laporan order Excel</field>
+        <field name="model">coffehouse.order</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">coffehouse.report_Order_xlsx</field>
+        <field name="report_file">coffehouse.report_Order_xlsx</field>
+        <field name="binding_model_id" ref="model_coffehouse_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    
+    <record id="report_order_pdf" model="ir.actions.report">
+        <field name="name">FAKTUR PDF</field>
+        <field name="model">coffehouse.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">coffehouse.report_order_pdf</field>
+        <field name="report_file">coffehouse.report_order_pdf</field>
+        <field name="binding_model_id" ref="model_coffehouse_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_kopi_pdf" model="ir.actions.report">
+        <field name="name">FAKTUR PDF</field>
+        <field name="model">coffehouse.kopi</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">coffehouse.report_kopi_pdf</field>
+        <field name="report_file">coffehouse.report_kopi_pdf</field>
+        <field name="binding_model_id" ref="model_coffehouse_kopi"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="wizzard_kopireport_pdf" model="ir.actions.report">
+        <field name="name">Print Report</field>
+        <field name="model">kopi.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">coffehouse.wizzard_kopireport_pdf_tmp</field>
+        <field name="report_file">coffehouse.wizzard_kopireport_pdf_tmp</field>
+        <field name="binding_model_id" ref="model_coffehouse_kopireport"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,2 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_coffehouse_coffehouse,coffehouse.coffehouse,model_coffehouse_coffehouse,base.group_user,1,1,1,1
+access_coffehouse_kelompokkopi,access.coffehouse.kelompokkopi,model_coffehouse_kelompokkopi,,1,1,1,1
+access_coffehouse_kopi,access.coffehouse.kopi,model_coffehouse_kopi,,1,1,1,1
+access_coffehouse_supplier,access.coffehouse.supplier,model_coffehouse_supplier,,1,1,1,1
+access_coffehouse_order,access.coffehouse.order,model_coffehouse_order,,1,1,1,1
+access_coffehouse_detailorder,access.coffehouse.detailorder,model_coffehouse_detailorder,,1,1,1,1
+access_coffehouse_pelanggan,access.coffehouse.pelanggan,model_coffehouse_pelanggan,,1,1,1,1
+access_coffehouse_kopireport,access.coffehouse.kopireport,model_coffehouse_kopireport,,1,1,1,1

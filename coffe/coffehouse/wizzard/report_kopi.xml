@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+     <!-- <record id="kopireport_wizzard_view_form" model="ir.ui.view">
+        <field name="name">kopireport_wizzard_view_form</field>
+        <field name="model">coffehouse.kopireport</field>
+        <field name="arch" type="xml">
+            <form string="kopireport_wizzard_form">
+                <group>
+                    <field name="pegawai_id"/>
+                </group>
+
+                <footer>
+                    <button name="action_kopi_report" type="object" string="Print Report" class="btn btn-warning"/>
+                    <button special="cancel" string="Cancel" class="btn btn-danger"/>
+                </footer>
+            </form>
+        </field>
+    </record> -->
+
+    <!-- <record id="kopi_report_action_wizzard" model="ir.actions.act_window">
+        <field name="name">kopi_report_action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffehouse.kopireport</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="kopireport_wizzard_view_form"/>
+        <field name="target">new</field>
+    </record> -->
+
+    <menuitem id="kopi_report_menu_wizzard"
+              name="Kopi_report"
+              parent="coffehouse_laporan_menu_categ"
+              action="kopi_report_action_wizzard"
+              sequence="49"/>
+</odoo>

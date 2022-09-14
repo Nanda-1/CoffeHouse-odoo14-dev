@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <!-- <record id="coffehouse_order.seq_order" model="ir.sequence">
+                <field name="name">Order Coffe</field>
+                <field name="code">coffehouse.order</field>
+                <field name="number_next_actual">001</field>
+                <field name="prefix">Seq Order </field>
+                <field name="padding">1</field>
+        </record> -->
+
+        <record id="coffehouse_order_view_tree" model="ir.ui.view">
+            <field name="name">List Order</field>
+            <field name="model">coffehouse.order</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="id_order"/>
+                    <field name="sequence"/>
+                    <field name="nama_pembeli"/>
+                    <field name="id_member"/>
+                    <field name="tgl_order"/>
+                    <field name="total_bayar"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="coffehouse_order_view_form" model="ir.ui.view">
+            <field name="name">Order Coffe</field>
+            <field name="model">coffehouse.order</field>
+            <field name="arch" type="xml">
+                <form string="Form Order">
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                        <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                        <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin meng-cancel Quotation ini?"/>
+                        <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin untuk mengedit Quotation ini?"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                        <h1>
+                            <field name="sequence" readonly="1"/>
+                        </h1>
+                        </div>
+                        <group>
+                            <field name="id_order" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                            <field name="nama_pembeli" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                            <field name="id_member" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>                         
+                            <field name="tgl_order" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                            <field name="total_bayar" attrs="{'readonly' : [('state', '!=', 'draft')]}"/> 
+                           
+                        </group>
+                        <group colspan="2" col="2" name="daftarkopi" string="Daftar kopi">
+                        <field name="detailorder_ids" attrs="{'readonly' : [('state', '!=', 'draft')]}" >
+                            <tree editable='bottom'>
+                                <field name="kopi_id"/>
+                                <field name="item_price"/>
+                                <field name="qty"/>
+                                <field name="subtotal" sum="Total"/>
+                            </tree>
+                        </field>
+                        </group>
+                        <!-- <group name="Member" string="member">
+                            <field name="member_ids"/>   
+                        </group> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    <record id="coffehouse_order_action" model="ir.actions.act_window">
+        <field name="name">order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffehouse.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="order_view_menu_action" 
+                name="order" 
+                parent="coffehouse_order_menu_categ" 
+                action="coffehouse_order_action" 
+                sequence="10"/>
+
+</odoo>
