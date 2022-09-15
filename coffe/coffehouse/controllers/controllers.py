@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
-
+from odoo.http import request
+from odoo import http
+import json
 
 # class Coffehouse(http.Controller):
 #     @http.route('/coffehouse/coffehouse/', auth='public')
@@ -19,3 +20,24 @@
 #         return http.request.render('coffehouse.object', {
 #             'object': obj
 #         })
+
+
+class Coffehouse(http.Controller):
+    """ The summary line for a class docstring should fit on one line.
+
+        Routes:
+          /some_url: url description
+    """
+
+    @http.route('/coffehouse/kopi', type='http', auth='none')
+    def some_url(self, **kw):
+        kopi = request.env['coffehouse.kopi'].search([])
+        list = []
+        for x in kopi :
+            list.append({
+                'nama_kopi' : x.name,
+                'harga_beli' : x.harga_beli,
+                'harga_jual'  : x.harga_jual,
+                'stok'          : x.stok
+            })
+        return json.dumps(list)
